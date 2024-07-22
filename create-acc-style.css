@@ -1,0 +1,57 @@
+* {
+    color: #fff;
+    font-family: sans-serif;
+}
+
+body {
+    background-color:  #1b1b32;
+}
+
+h1 {
+    right: 50%;
+    margin-top: 50px;
+    margin-bottom: 300px;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.form-container label {
+    display: block;
+}
+
+.form-container form button {
+    position: relative;
+    right: -25%;
+}
+
+.form-container form label {
+    margin: 10PX;
+}
+
+.form-container form button{
+    color: black;
+    border-radius: 5%;
+    border: none;
+    width: 200px;
+    height: 30px;
+    margin-top: 10px;
+}
