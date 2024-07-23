@@ -55,3 +55,26 @@ p {
     height: 30px;
     margin-top: 10px;
 }
+
+.form-container input {
+    color: black;
+}
+
+.form-container form #age {
+    width: 100px;
+    color: black;
+}
+
+.form-container form #dropdown option{
+    width: 100px;
+    color: black;
+}
+
+.form-container form #dropdown{
+    width: 200px;
+    color: black;
+}
+
+.form-container form #psw {
+    color: black;
+}
