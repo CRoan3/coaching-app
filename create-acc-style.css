@@ -10,7 +10,7 @@ body {
 h1 {
     right: 50%;
     margin-top: 50px;
-    margin-bottom: 300px;
+    margin-bottom: 175px;
     font-size: 50px;
     display: flex;
     justify-content: center;
@@ -65,15 +65,27 @@ p {
     color: black;
 }
 
-.form-container form #dropdown option{
+.form-container form #sex-dropdown{
+    width: 200px;
+    color: black;
+}
+
+.form-container form #sex-dropdown option{
     width: 100px;
     color: black;
 }
 
-.form-container form #dropdown{
+
+.form-container form #ts-dropdown{
     width: 200px;
     color: black;
 }
+
+.form-container form #ts-dropdown option{
+    width: 100px;
+    color: black;
+}
+
 
 .form-container form #psw {
     color: black;
@@ -90,7 +102,7 @@ p {
   }
   
   #message p {
-    padding: 10px 35px;
+    padding: 3px 35px;
     font-size: 18px;
   }
   
