@@ -65,23 +65,23 @@ p {
     color: black;
 }
 
-.form-container form #sex-dropdown{
+.form-container form #new-user-sex{
     width: 200px;
     color: black;
 }
 
-.form-container form #sex-dropdown option{
+.form-container form #new-user-sex option{
     width: 100px;
     color: black;
 }
 
 
-.form-container form #ts-dropdown{
+.form-container form #new-username-training-status{
     width: 200px;
     color: black;
 }
 
-.form-container form #ts-dropdown option{
+.form-container form #new-username-training-status option{
     width: 100px;
     color: black;
 }

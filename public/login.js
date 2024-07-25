@@ -22,4 +22,3 @@ function login() {
     } 
 }
 
-console.log("Incorrect username or password.");
