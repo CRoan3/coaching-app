@@ -169,7 +169,7 @@ function login() {
 
 
 
-
+//collecting form data and adding newUser to objUsers for login
 function createAcc () {
   var registerUserFirstName = document.getElementById("new-first-name").value;
   var registerUserLastName = document.getElementById("new-last-name").value;
@@ -199,7 +199,7 @@ function createAcc () {
 
   objUsers.push(newUser);
   console.log(objUsers);
-  localStorage.objUsers = JSON.stringify(objUsers);
-  console.log(JSON.parse(localStorage.getItem("objUsers")));
+  localStorage.objUsers = JSON.stringify(objUsers); //storing locally so we can test login functionality
+  console.log(JSON.parse(localStorage.getItem("objUsers")));  
 }
 
