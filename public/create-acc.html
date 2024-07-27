@@ -9,7 +9,8 @@
 <body>
     <H1 title="app-title"><a href="index.html">Fitness App</H1></a>
     <div class="form-container">
-        <form id="create-acc-form">
+        <H2>Account Creation:</H2>
+        <form id="create-acc-form" background="midnightblue">
             <label class="input-label" for="new-first-name">Enter your first name:
                 <input type="text" id="new-first-name" placeholder="First name..." required>
             </label>
@@ -25,7 +26,7 @@
                </select>
             </label>
             <label id="new-age-label" for="new-user-age">Input your age (years):
-                <input id="new-user-age" type="number" min="18" max="120" pattern="[0-9]" placeholder="Enter Age" required/>
+                <input id="new-user-age" type="number" min="18" max="120" pattern="[0-9]" placeholder="Age..." required/>
             </label>
             <label for="new-username-training-status">Select training status:   
                 <select id="new-username-training-status">
@@ -37,16 +38,16 @@
                     </select>
             </label>
             <label id="new-email-label" for="new-email">Enter Your Email Address:
-                <input type="email" id="new-email" name="new-email" placeholder="Enter email address..."required autocomplete="new-email"/>
+                <input type="email" id="new-email" name="new-email" placeholder="Email address..."required autocomplete="new-email"/>
             </label>  
             <label id="new-username-label" for="new-username">Enter desired username:
-                <input type="text" id="new-username" placeholder="Enter username:" autocomplete="username">
+                <input type="text" id="new-username" placeholder="Username:" autocomplete="username">
             </label>
             <label for="new-password">Enter desired password
                 <input type="password" id="new-password" name="new-password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 or more characters" required placeholder="Enter password..." autocomplete="new-password">
             </label>
             <label for="new-password2">Re-enter desired password
-                <input type="password" id="new-password2" name="new-password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 or more characters" placeholder="Enter password..." required autocomplete="new-password">
+                <input type="password" id="new-password2" name="new-password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 or more characters" placeholder="Re-enter password..." required autocomplete="new-password">
             </label>
                 <div id="message">
                     <h3>Password must contain the following:</h3>
@@ -57,7 +58,9 @@
                     <p id="pw-match" class="invalid">Passwords match</p>
                   </div>
             <button type="submit" onclick="createAcc()">Submit</button>
+            <input type="file" id="profile-pic">
         </form>
+        
         
     </div>
 <script>
@@ -79,14 +82,14 @@ var pwMatch = document.getElementById("pw-match")
         document.getElementById("message").style.display = "block";
     }
 
-// When the user clicks outside of the password field, hide the message box
+/* // When the user clicks outside of the password field, hide the message box
     myInput.onblur = function() {
         document.getElementById("message").style.display = "none";
     }
 
     myInput2.onblur = function() {
         document.getElementById("message").style.display = "none";
-    }
+    } */
 
     // When the user starts to type something inside the first password field
     myInput.onkeyup = function() {

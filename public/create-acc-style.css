@@ -9,34 +9,53 @@ body {
 
 h1 {
     right: 50%;
-    margin-top: 50px;
-    margin-bottom: 175px;
+    margin-top: 25px;
+    margin-bottom: 30px;
     font-size: 50px;
     display: flex;
     justify-content: center;
 }
 
 h2 {
-    font-size: 20px;
+    font-size: 1.2rem;
 }
 
 a {
-    text-decoration: none;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: gray ;
 }
 
 p {
     font-weight: bold;
-    font-size: 20px;
+    font-size: 1.2px;
 }
 
 .form-container {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .form-container label {
     display: block;
 }
+
+.form-container form {
+    display: bock;
+    background-color:  #1b1b32;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem;
+}
+
+
+.form-container form select {
+    background: #1b1b32;
+}
+
 
 .form-container form button {
     position: relative;
@@ -44,7 +63,8 @@ p {
 }
 
 .form-container form label {
-    margin: 10PX;
+    margin: 1rem;
+    max-width: 400px;
 }
 
 .form-container form button{
@@ -57,39 +77,43 @@ p {
 }
 
 .form-container input {
-    color: black;
+    color: white;
+    background-color:  #1b1b32;
 }
 
+
 .form-container form #age {
-    width: 100px;
-    color: black;
+    width: 150px;
+    color: white;
 }
 
 .form-container form #new-user-sex{
     width: 200px;
-    color: black;
+    color: white;
 }
 
 .form-container form #new-user-sex option{
     width: 100px;
-    color: black;
+    color: white;
 }
 
 
 .form-container form #new-username-training-status{
     width: 200px;
-    color: black;
+    color: white;
 }
 
 .form-container form #new-username-training-status option{
     width: 100px;
-    color: black;
+    color: white;
 }
 
 
-.form-container form #psw {
-    color: black;
+.form-container form #profile-pic {
+    color: white;
+    padding-left: 16rem;
 }
+
 
 /* The message box is shown when the user clicks on the password field */
 #message {
@@ -99,6 +123,7 @@ p {
     position: relative;
     padding: 20px;
     margin-top: 10px;
+    max-width: 400px;
   }
   
   #message p {
