@@ -7,11 +7,11 @@ const { tsOptionMap, genOptionMap } = require('../JSutilities/optionMappings');
 
 
 router.post('/register', async (req, res) => {
-    const { email, psw, fname, gender, age, lname, ts } = req.body;
+    const { email, psw, fname, gender, age, lname, ts,username } = req.body;
 
 
     // Check for missing data and handle accordingly
-    if (!email || !psw || !fname || !gender || !age || !lname || !ts) {
+    if (!email || !psw || !fname || !gender || !age || !lname || !ts || !username) {
         return res.status(400).json({ message: "Missing required data in request body" });
     }
 
@@ -19,7 +19,7 @@ router.post('/register', async (req, res) => {
         const passwordHash = await hashPassword(psw);
         const gender_mapped = genOptionMap(gender);
         const ts_mapped = tsOptionMap(ts);
-        const dataToSave = { email, password_hash: passwordHash, fname, gender: gender_mapped, birth_year: age, lname, first_training_status: ts_mapped };
+        const dataToSave = { email, password_hash: passwordHash, fname, gender: gender_mapped, birthdate: age, lname, first_training_status: ts_mapped, username };
         const result = await dataService.saveData(dataToSave);
         res.status(201).json({ message: 'Data saved successfully' });
     } catch (error) {
