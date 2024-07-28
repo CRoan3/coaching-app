@@ -8,6 +8,10 @@ const db = require('./db_services/user_reader_connect');
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+var cors = require('cors');
+app.use(cors());
+
+
 
 //app.use("/", userEmailRouter);
 
