@@ -10,7 +10,7 @@
     <H1 title="app-title"><a href="index.html">Fitness App</H1></a>
     <div class="form-container">
         <H2>Account Creation:</H2>
-        <form id="create-acc-form" background="midnightblue">
+        <form id="create-acc-form" background="midnightblue" action="http://localhost:3000/register" method="POST">
             <label class="input-label" for="new-first-name">Enter your first name:
                 <input type="text" id="new-first-name" placeholder="First name..." required>
             </label>
@@ -252,7 +252,7 @@ var pwMatch = document.getElementById("pw-match")
     }
 
     objUsers.push(newUser);
-    console.log(objUsers);
+    //console.log(objUsers);
     localStorage.objUsers = JSON.stringify(objUsers); //storing locally so we can test login functionality
     console.log(JSON.parse(localStorage.getItem("objUsers")));  
     }
@@ -265,7 +265,7 @@ var pwMatch = document.getElementById("pw-match")
 
         const formData = new FormData(accForm);
 
-        fetch('https://httpbin.org/post', {
+        fetch('http://localhost:3000/register', {
             method: "POST",
             body: formData, 
         })
