@@ -2,9 +2,16 @@
     color: #fff;
     font-family: sans-serif;
 }
+html {
+    height: 100%;
+}
 
 body {
-    background-color:  #1b1b32;
+    background-image: linear-gradient(to bottom right, rgb(0, 39, 75), rgb(70, 101, 167));
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
 }
 
 h1 {
@@ -12,8 +19,6 @@ h1 {
     margin-top: 25px;
     margin-bottom: 30px;
     font-size: 50px;
-    display: flex;
-    justify-content: center;
 }
 
 h2 {
@@ -21,7 +26,7 @@ h2 {
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:hover {
@@ -34,99 +39,99 @@ p {
 }
 
 .form-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.form-container label {
-    display: block;
-}
-
-.form-container form {
-    display: bock;
-    background-color:  #1b1b32;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 2rem;
-}
-
-
-.form-container form select {
-    background: #1b1b32;
-}
-
-
-.form-container form button {
     position: relative;
-    right: -25%;
 }
 
-.form-container form label {
-    margin: 1rem;
-    max-width: 400px;
+form,
+label {
+    display: grid;
+    grid-gap: 2rem;
+    margin-right: 10px;
 }
 
-.form-container form button{
-    color: black;
-    border-radius: 5%;
-    border: none;
-    width: 200px;
-    height: 30px;
-    margin-top: 10px;
+label {
+    align-items: center;
+    grid-template-columns: auto 1fr;
 }
 
-.form-container input {
-    color: white;
-    background-color:  #1b1b32;
+input {
+    background: white;
+    color: rgb(7 2 18);
+    transition: all 200ms ease;
+    border-left: 0 solid transparent;
+    border: 0;
+    height: 2rem;
+    padding: 0 calc(5.8rem * 0.5);
+    border-radius: calc(5.8rem * 0.3);
+    box-shadow: 0 0 2rem rgb(0, 0, 0, 20%);
+}
+
+select {
+    background: white;
+    color: rgb(7 2 18);
+    transition: all 200ms ease;
+    border-left: 0 solid transparent;
+    border: 0;
+    height: 2rem;
+    padding: 0 calc(5.8rem * 0.5);
+    border-radius: calc(5.8rem * 0.3);
+    box-shadow: 0 0 2rem rgb(0, 0, 0, 20%);
+}
+
+option {
+    background: white;
+    color: rgb(7 2 18);
+    transition: all 200ms ease;
+    border-left: 0 solid transparent;
+    border: 0;
+    height: 2rem;
+    padding: 0 calc(5.8rem * 0.5);
+    border-radius: calc(5.8rem * 0.3);
+    box-shadow: 0 0 2rem rgb(0, 0, 0, 20%);
+}
+
+button {
+    border: 0;
+    height: 2.5rem;
+    padding: 0 calc(5.8rem * 0.5);
+    border-radius: calc(5.8rem * 0.3);
+    box-shadow: 0 0 2rem rgb(0, 0, 0, 20%);
+    cursor: pointer;
+    background: rgb(7 2 18);
+}
+
+button:hover {
+    background: gray;
+}
+
+input::-webkit-calendar-picker-indicator {
+    background: transparent;
+    bottom: 0;
+    color: transparent;
+    cursor: pointer;
+    height: auto;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
 }
 
 
-.form-container form #age {
-    width: 150px;
-    color: white;
-}
 
-.form-container form #new-user-sex{
-    width: 200px;
-    color: white;
-}
-
-.form-container form #new-user-sex option{
-    width: 100px;
-    color: white;
-}
-
-
-.form-container form #new-username-training-status{
-    width: 200px;
-    color: white;
-}
-
-.form-container form #new-username-training-status option{
-    width: 100px;
-    color: white;
-}
-
-
-.form-container form #profile-pic {
-    color: white;
-    padding-left: 16rem;
-}
-
-::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-}
 
 /* The message box is shown when the user clicks on the password field */
 #message {
-    display:none;
+    display: none;
     background: #1b1b32;
+    opacity: 85%;
     color: #000;
     position: relative;
     padding: 20px;
     margin-top: 10px;
     max-width: 400px;
+    max-height: 400px;
+    border-radius: calc(5.8rem * 0.3);
   }
   
   #message p {

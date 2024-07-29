@@ -7,9 +7,9 @@
     <title>Create an Account</title>
 </head>
 <body>
+  <div class="form-container">
     <H1 title="app-title"><a href="index.html">Fitness App</H1></a>
-    <div class="form-container">
-        <H2>User Profile:</H2>
+      <H2>User Profile:</H2>
         <form id="create-acc-form" background="midnightblue" action="http://localhost:3000/register" method="POST">
             <label class="input-label" for="new-first-name">First name:
                 <input type="text" id="new-first-name" placeholder="First name..." required>
@@ -52,20 +52,17 @@
             <label for="new-password2">Re-enter desired password
                 <input type="password" id="new-password2" name="new-password2" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number, one uppercase letter, one lowercase letter, and be at least 8 or more characters" placeholder="Re-enter password..." required autocomplete="new-password">
             </label>
-                <div id="message">
-                    <h3>Password must contain the following:</h3>
-                    <p id="letter" class="invalid">A lowercase letter</p>
-                    <p id="capital" class="invalid">A capital (uppercase) letter</p>
-                    <p id="number" class="invalid">A number</p>
-                    <p id="length" class="invalid">Minimum 8 characters</p>
-                    <p id="pw-match" class="invalid">Passwords match</p>
-                  </div>
             <button type="submit" onclick="createAcc()">Submit</button>
-            <input type="file" id="profile-pic">
-        </form>
-        
-        
-    </div>
+          </form>
+        </div>
+        <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A lowercase letter</p>
+            <p id="capital" class="invalid">A capital (uppercase) letter</p>
+            <p id="number" class="invalid">A number</p>
+            <p id="length" class="invalid">Minimum 8 characters</p>
+            <p id="pw-match" class="invalid">Passwords match</p>
+        </div>
 <script>
 var myInput = document.getElementById("new-password");
 var myInput2 = document.getElementById("new-password2");
