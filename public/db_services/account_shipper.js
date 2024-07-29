@@ -1,10 +1,10 @@
 const db = require('./user_placer_connect');
 
 const saveData = async (data) => {
-    const { email, fname, gender, birth_year, lname, first_training_status } = data;
+    const { email, fname, gender, birthdate, lname, first_training_status, username } = data;
 
-    const sql = `INSERT INTO user_data.users (email, fname, gender, birth_year, lname, first_training_status) VALUES (?, ?, ?, ?, ?, ?)`;
-    const values = [email, fname, gender, birth_year, lname, first_training_status];
+    const sql = `INSERT INTO user_data.users (email, fname, gender, birthdate, lname, first_training_status,username) VALUES (?, ?, ?, ?, ?, ?,?)`;
+    const values = [email, fname, gender, birthdate, lname, first_training_status, username];
 
     return new Promise((resolve, reject) => {
         db.query(sql, values, (err, result) => {
