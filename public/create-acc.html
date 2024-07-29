@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="create-acc-style.css">
+    <link rel="stylesheet" href="create-acc-style-test.css">
     <title>Create an Account</title>
 </head>
 <body>
-    <H1 title="app-title"><a href="index.html">Fitness App</H1></a>
-    <div class="form-container">
-        <H2>Account Creation:</H2>
+  <div class="form-container">
+      <H1 title="app-title"><a href="index.html">Fitness App</H1></a>
+        <H2>Account Creation</H2>
         <form id="create-acc-form" background="midnightblue" action="http://localhost:3000/register" method="POST">
-            <label class="input-label" for="new-first-name">Enter your first name:
+            <label class="input-label" for="new-first-name">Enter your first name
                 <input type="text" id="new-first-name" name="fname" placeholder="First name..." required>
             </label>
-            <label class="input-label" for="new-last-name">Enter your last name:
+            <label class="input-label" for="new-last-name">Enter your last name
                 <input type="text" id="new-last-name" name="lname" placeholder="Last name..." required>
             </label>
-            <label for="new-user-sex">Select sex:   
+            <label for="new-user-sex">Select sex   
                 <select id="new-user-sex" name="gender" required>
                  <option>(select one)</option>
                  <option>Male</option>
@@ -25,10 +25,10 @@
                  <option>Non-binary or intersex</option>
                </select>
             </label>
-            <label id="new-age-label" for="new-user-age">Input your age (years):
+            <label id="new-age-label" for="new-user-age">Input your age (years)
               <input id="new-user-age" type="date" value="2024-07-29" min="1925-01-01" max="2018-12-31" required/>
             </label>
-            <label for="new-username-training-status">Select training status:   
+            <label for="new-username-training-status">Select training status   
                 <select id="new-username-training-status" name="ts">
                     <option>(select one)</option>
                     <option>Beginner (<1 year)</option>
@@ -37,10 +37,10 @@
                     <option>Advanced (>3 years)</option>
                     </select>
             </label>
-            <label id="new-email-label" for="new-email">Enter Your Email Address:
+            <label id="new-email-label" for="new-email">Enter Your Email Address
                 <input type="email" id="new-email" name="email" placeholder="Email address..."required autocomplete="new-email"/>
             </label>  
-            <label id="new-username-label" for="new-username">Enter desired username:
+            <label id="new-username-label" for="new-username">Enter desired username
                 <input type="text" id="new-username" name="username" placeholder="Username:" autocomplete="username">
             </label>
             <label for="new_password">Enter desired password
@@ -58,10 +58,7 @@
                     <p id="pw-match" class="invalid">Passwords match</p>
                   </div>
             <button type="submit">Submit</button>
-            <input type="file" id="profile-pic">
         </form>
-        
-
     </div>
 <script>
 var myInput = document.getElementById("new-password");
