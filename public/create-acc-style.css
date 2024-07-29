@@ -114,6 +114,9 @@ p {
     padding-left: 16rem;
 }
 
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
 
 /* The message box is shown when the user clicks on the password field */
 #message {
@@ -152,3 +155,5 @@ p {
     left: -35px;
     content: "x";
   }
+
+
