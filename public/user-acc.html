@@ -82,15 +82,15 @@ var pwMatch = document.getElementById("pw-match")
         document.getElementById("message").style.display = "block";
     }
 
-/* // When the user clicks outside of the password field, hide the message box
+ // When the user clicks outside of the password field, hide the message box
     myInput.onblur = function() {
         document.getElementById("message").style.display = "none";
     }
 
     myInput2.onblur = function() {
         document.getElementById("message").style.display = "none";
-    } */
-
+    }
+ 
     // When the user starts to type something inside the first password field
     myInput.onkeyup = function() {
     // Validate capital letters
@@ -189,6 +189,10 @@ var pwMatch = document.getElementById("pw-match")
     } else {
       pwMatch.classList.remove("valid");
       pwMatch.classList.add("invalid");
+    } 
+
+    if(myInput.value == myInput2.value) {
+    document.getElementById("message").style.display = "none";
     } 
   }
 
