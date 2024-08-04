@@ -4,7 +4,7 @@
     box-sizing: border-box;
 }
 html {
-    height: 100%;
+    height: 100vh;
     display: flex;
     text-align: center;
     justify-content: center;
@@ -14,13 +14,25 @@ body {
     background-image: linear-gradient(to bottom right, rgb(0, 39, 75), rgb(70, 101, 167));
 }
 
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: grey;
+    text-decoration: underline;
+    text-underline-offset: .5rem;
+    text-decoration-color: rgb(181, 181, 181);
+}
+
 .exercise-container {
     width: 400px;
     min-height: 100vh;
     padding-top: 4%;
 }
 
-.exercise-container h1 {
+.exercise-container h2 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +40,7 @@ body {
     font-weight: 600;
 }
 
-.exercise-container h1 img {
+.exercise-container h2 img {
     width: 60px;
 }
 
