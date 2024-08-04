@@ -19,7 +19,7 @@ router.post('/register', async (req,res,next)=>{
         const gender_mapped = genOptionMap(gender);
         const ts_mapped = tsOptionMap(ts);
         const user = await db.insertUser({email,fname,gender: gender_mapped,birthdate,lname,ts: ts_mapped,username});
-        const userPwSave = await db.insertUserPw({email,hashedPassword,username});
+        const userPwSaveable = await db.insertUserPw({email,hashedPassword,username});
         const jsonToken = jwt.sign({user: user}, process.env.JWT_LOGIN_SECRET, { expiresIn: '30m'} );
         res.cookie('token', jsonToken, { httpOnly: true, secure: true, SameSite: 'strict' , expires: new Date(Number(new Date()) + 30*60*1000) }); //we add secure: true, when using https.
         res.json({token: jsonToken});
