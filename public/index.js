@@ -1,19 +1,19 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const userEmailRouter = require("./routes/get_user_emails");
-const accountShipperRouter = require("./routes/account_shipper");
-const db = require('./db_services/user_reader_connect');
+const authRoute = require("./routes/auth");
 
+
+
+// allows us to parse json and urlencoded responses
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// cors allows cross origin requests but it needs to be locked down before prod TODO
 var cors = require('cors');
 app.use(cors());
 
 
-
-//app.use("/", userEmailRouter);
 
 /* Error handler middleware */
 app.use((err, req, res, next) => {
@@ -25,7 +25,8 @@ app.use((err, req, res, next) => {
 });
 
 
-app.use("/", accountShipperRouter)
+app.use("/", authRoute)
+
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`);
