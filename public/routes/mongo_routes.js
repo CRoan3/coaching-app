@@ -30,7 +30,7 @@ router.post('/exercises', async (req, res) => {
         const savedExercise = await newExercise.save();
         res.status(201).json(savedExercise);
     } catch (err) {
-        console.error(err);
+        console.error('error',err);
         res.status(500).json({ error: 'Server error' });
     }
 });
