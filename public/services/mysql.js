@@ -32,10 +32,10 @@ const root_pool = mysql.createPool({
 
 
 
-let db = {};
+let mysqldb = {};
 // ***Requests to the User table ***
 
-db.allUser = () =>{
+mysqldb.allUser = () =>{
     return new Promise((resolve, reject)=>{
         root_pool.query('SELECT * FROM user_data.users ', (error, users)=>{
             if(error){
@@ -47,7 +47,7 @@ db.allUser = () =>{
 };
 
 
-db.getUserByEmail = (email) =>{
+mysqldb.getUserByEmail = (email) =>{
     return new Promise((resolve, reject)=>{
         root_pool.query('SELECT * FROM user_data.users WHERE email = ?', [email], (error, users)=>{
             if(error){
@@ -58,7 +58,7 @@ db.getUserByEmail = (email) =>{
     });
 };
 
-db.getPwByEmail = (email) =>{
+mysqldb.getPwByEmail = (email) =>{
     return new Promise((resolve, reject)=>{
         root_pool.query('SELECT pw_hash FROM user_data.credentials WHERE email = ?', [email], (error, users)=>{
             if(error){
@@ -69,7 +69,7 @@ db.getPwByEmail = (email) =>{
     });
 };
 
-db.getPwByUsername = (username) =>{
+mysqldb.getPwByUsername = (username) =>{
     return new Promise((resolve, reject)=>{
         root_pool.query('SELECT CAST(pw_hash as CHAR) as pw_hash FROM user_data.credentials WHERE username = ?', [username], (error, users)=>{
             if(error){
@@ -80,7 +80,7 @@ db.getPwByUsername = (username) =>{
     });
 };
 
-db.insertUser = (data) =>{
+mysqldb.insertUser = (data) =>{
     const { email, fname, gender, birthdate, lname, first_training_status, username } = data;
     return new Promise((resolve, reject)=>{
         root_pool.query('INSERT INTO user_data.users (email, fname, gender, birthdate, lname, first_training_status,username) VALUES (?, ?, ?, ?, ?, ?,?)', [email, fname, gender, birthdate, lname, first_training_status, username], (error, result)=>{
@@ -94,7 +94,7 @@ db.insertUser = (data) =>{
     });
 };
 
-db.insertUserPw = (data) =>{
+mysqldb.insertUserPw = (data) =>{
     const { email, hashedPassword, username } = data;
     return new Promise((resolve, reject)=>{
         root_pool.query('INSERT INTO user_data.credentials (email, pw_hash,username) VALUES (?,?,?)', [email, hashedPassword,username], (error, result)=>{
@@ -108,7 +108,7 @@ db.insertUserPw = (data) =>{
     });
 };
 
-db.updateUser = (data) =>{
+mysqldb.updateUser = (data) =>{
     const { email, username } = data;
     return new Promise((resolve, reject)=>{
         root_pool.query('UPDATE user_data.users SET username = ? WHERE email = ?', [username, email], (error)=>{
@@ -121,7 +121,7 @@ db.updateUser = (data) =>{
     });
 };
 
-db.updateUserPw = (data) =>{
+mysqldb.updateUserPw = (data) =>{
     const { email, password_hash } = data;
     return new Promise((resolve, reject)=>{
         root_pool.query('UPDATE user_data.credentials SET pw_hash = ? WHERE email = ?', [password_hash, email], (error)=>{
@@ -134,7 +134,7 @@ db.updateUserPw = (data) =>{
     });
 };
 
-db.deleteUser = (id) =>{
+mysqldb.deleteUser = (id) =>{
     return new Promise((resolve, reject)=>{
         root_pool.query('DELETE FROM user_data.users WHERE id = ?', [id], (error)=>{
             if(error){
@@ -148,4 +148,4 @@ db.deleteUser = (id) =>{
 
 
 
-module.exports = db
+module.exports = mysqldb
