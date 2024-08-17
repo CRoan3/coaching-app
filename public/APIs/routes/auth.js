@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const {genOptionMap, tsOptionMap} = require("../services/optionMappings");
 const { hashSync, genSaltSync, compareSync } = require("bcrypt");
-const db = require('../services/db');
+const db = require('../services/mysql');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 
