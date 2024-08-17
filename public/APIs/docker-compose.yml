@@ -1,0 +1,9 @@
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo-search_mongodb
+    ports:
+      - 27017:27017
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ADMIN
+      MONGO_INITDB_ROOT_PASSWORD: password
