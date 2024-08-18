@@ -5,6 +5,11 @@ const { hashSync, genSaltSync, compareSync } = require("bcrypt");
 const db = require('../services/mysql');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+//const path = require('path');
+//const config = require(path.join(__dirname, '../../../config'));
+const { config } = require('dotenv');
+
+config();
 
 router.use(cookieParser());
 
@@ -48,7 +53,7 @@ router.post('/login', async (req, res) => {
         const isValidPassword = compareSync(password, user.pw_hash);
         if(isValidPassword){
             user.password = undefined;
-            const jsonToken = jwt.sign({user: user}, process.env.JWT_LOGIN_SECRET, { expiresIn: '30m'} );
+            const jsonToken = jwt.sign({user: user}, config.jwt_secret, { expiresIn: '30m'} );
             res.cookie('token', jsonToken, { httpOnly: true, secure: true, SameSite: 'strict' , expires: new Date(Number(new Date()) + 30*60*1000) }); //we add secure: true, when using https.
 
             res.json({token: jsonToken});

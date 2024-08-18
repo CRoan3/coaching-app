@@ -3,6 +3,9 @@ const app = express();
 const port = 3000;
 const authRoute = require("./routes/auth");
 const cors = require('cors');
+const { config } = require('dotenv');
+
+config();
 
 
 // allows us to parse json and urlencoded responses
