@@ -10,7 +10,7 @@ function Search() {
         e.preventDefault(e);
         e.stopPropagation(e);
         e.nativeEvent.stopImmediatePropagation();
-        axios.get("http://localhost:4000/fitness_app/exercise_videos/" + exercise_name
+        axios.get("http://localhost:5000/fitness_app/exercise_videos/" + exercise_name
             )
             .then((res) =>
             {
@@ -28,7 +28,7 @@ function Search() {
       <div>
         <h1 align="center">Exercise Details</h1>
         <div className="container mt-4">
-            <form>
+            <form submit="false">
                 <div className="form-group">
                 <div role="alert">
                     <label htmlFor="exercise-name">Exercise Name</label>
@@ -38,12 +38,12 @@ function Search() {
                         id="exercise_name"
                         name={exercise_name}
                         value={exercise_name || ''}
-                         onChange={e => {
+                        onChange={e => {
                             setName(e.target.value);
                         }}  />
                 </div>
                 </div>
-                <button type="button" className="btn btn-primary mt-4" onClick={getExercise}>
+                <button type="submit" className="btn btn-primary mt-4" onClick={getExercise}>
                     Search
                 </button>
             </form>

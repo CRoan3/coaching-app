@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediaqueries.css">
+    <title>Fitness App</title>
+</head>
+<body>
+    <a href="login-or-create.html"><h2>Login</h2></a>
+    <nav id="desktop-nav">
+        <a href="index.html"><div class="logo">Fitness App</div></a>
+        <div>
+            <ul class="nav-links">
+               <li><a href="#about">About</a></li> 
+               <li><a href="protectedPages/workout.html">Workouts</a></li>
+               <li><a href="">Nutrition Tracking</a></li> 
+               <li><a href="#contact">Contact</a></li> 
+            </ul>
+        </div>
+    </nav>
+    <nav id="hamburger-nav">
+        <div class="logo">Fitness App</div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()">About</a></li> 
+            <li><a href="protectedPages/workout.html" onclick="toggleMenu()">Workouts</a></li>
+            <li><a href="#projects" onclick="toggleMenu()">Nutrition Tracking</a></li> 
+            <li><a href="#contact" onclick="toggleMenu()">Contact</a></li> 
+            </div>
+        </div>
+    </nav>
+    
+    
+    <script src="script.js">
+        
+    </script>
+</body>
+<footer>
+    <p>Copyright &#169; 2024 Chris Roan. All Rights Reserved.</p>
+</footer>
+    
+</html>

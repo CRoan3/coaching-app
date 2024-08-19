@@ -1,11 +1,10 @@
 const express = require("express");
 const app = express();
 const port = 3000;
-const authRoute = require("./routes/auth");
-const cors = require('cors');
+const authRoute = require("../routes/auth");
 const { config } = require('dotenv');
 
-config();
+
 
 
 // allows us to parse json and urlencoded responses
@@ -13,7 +12,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // cors allows cross origin requests but it needs to be locked down before prod TODO
-
 app.use(cors());
 
 
