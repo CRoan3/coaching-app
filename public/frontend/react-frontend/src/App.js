@@ -1,15 +1,18 @@
+import './App.css';
 import Search from "./components/search.js";
+import React from "react";
 
 
 function App() {
-  console.log(Search());
   return (
-    <div>
-      <Search/>
-    </div>
-  );
-  
-}
+    <>
+      <h1>Workout</h1>
+      <div id="exerciseContainter">
+        <Search></Search>
+      </div>
+    </>
+    )
+};
 
 
 
