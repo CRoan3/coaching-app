@@ -1,32 +1,34 @@
 const mysql = require('mysql2');
-require('dotenv').config()
-
+//const path = require('path');
+//const config = require(path.join(__dirname, '../../../config'));
+const { config } = require('dotenv');
+config();
 
 const placer_pool = mysql.createPool({
     connectionLimit: 10,    // the number of connections node.js will hold open to our database
-    password: process.env.USER_PLACER_PASSWORD,
-    user: process.env.USER_PLACER_USER,
-    database: process.env.MYSQL_DB,
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT
+    password: process.env.mysql_placer_password,
+    user: process.env.mysql_placer_user,
+    database: process.env.mysql_database,
+    host: process.env.mysql_host,
+    port: process.env.mysql_port
 });
 
 const reader_pool = mysql.createPool({
     connectionLimit: 10,    // the number of connections node.js will hold open to our database
-    password: process.env.USER_READER_PASSWORD,
-    user: process.env.USER_READER_USER,
-    database: process.env.MYSQL_DB,
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT
+    password: process.env.mysql_reader_password,
+    user: process.env.mysql_reader_user,
+    database: process.env.mysql_database,
+    host: process.env.mysql_host,
+    port: process.env.mysql_port
 });
 
 const root_pool = mysql.createPool({
     connectionLimit: 10,    // the number of connections node.js will hold open to our database
-    password: process.env.ROOT_PASSWORD,
-    user: process.env.ROOT_USER,
-    database: process.env.MYSQL_DB,
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT
+    password: process.env.mysql_root_password,
+    user: process.env.mysql_root_user,
+    database: process.env.mysql_database,
+    host: process.env.mysql_host,
+    port: process.env.mysql_port
 });
 
 
