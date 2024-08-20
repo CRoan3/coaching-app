@@ -8,40 +8,44 @@ function Search() {
     const [exercise_name, setName] = useState("");
     const [exercise_url, setVideoURL] = useState("");
     const [exerciseList, setExerciseList] = useState([]);
-
+    
     function getExercise(e) {
         e.preventDefault(e);
         e.stopPropagation(e);
         e.nativeEvent.stopImmediatePropagation();
         axios.get("http://localhost:5000/fitness_app/exercise_videos/" + exercise_name
-            )
-            .then((res) =>
+        )
+        .then((res) =>
             {
-            for (const data of res.data) {
-                console.log(data.exercise_url)
-                setVideoURL(data.exercise_url)
-                localStorage.setItem('exercise_url', data.exercise_url);
-            }
-            console.log(res.data);
-            setName(exercise_name);
+                for (const data of res.data) {
+                    console.log(data.exercise_url)
+                    setVideoURL(data.exercise_url)
+                    localStorage.setItem('exercise_url', data.exercise_url);
+                }
+                console.log(res.data);
+                setName(exercise_name);
             }
         ).catch(error => {
             alert(error)})
-
-        const Input = () => {
-            return <iframe title="iframe"
-            width="420" height="345"
-            name={exercise_url}
-            src={exercise_url || ''}/>;
+            
+            
+        const Iframe = () => {
+                if (exercise_url === '') {
+                    return null;
+                } else {
+                return <iframe title="iframe"
+                    width="420" height="345"
+                    name={exercise_url}
+                    src={exercise_url || ''}/>
+                };
+            } 
+        setExerciseList(exerciseList.concat(<Iframe key={exerciseList.length}/>));
         };
-          setExerciseList(exerciseList.concat(<Input key={exerciseList.length}/>));
-        };
-        ;
 
     return (
       <div>
 
-        <div className="container mt-4">
+        <div>
             <form submit="false">
                 <div className="form-group">
                 <div role="alert">
@@ -57,28 +61,23 @@ function Search() {
                         }}  />
                 </div>
                 </div>
-                <button type="submit" className="btn btn-primary mt-4"  onClick=
-                    {getExercise}>
-                    Search
-                </button>
+                    <button type="submit" className="btn btn-primary mt-4"  onClick=
+                        {getExercise}>
+                        Search
+                    </button>
             </form>
-            <div>
+        </div>
+        <div className="exerciseContainer">
                 {exerciseList}
-                <iframe title="iframe"
-                    width="420" height="345"
-                    name={exercise_url}
-                    src={exercise_url || ''}/>
-
-            </div>
+        </div>
 
 {/*             <div id="exercise-container">
                 <h2>Exercises</h2>
             </div> */}
 
 
-        </div>
 
-      </div>
+    </div>
 
     );
     

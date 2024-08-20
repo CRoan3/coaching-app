@@ -1,5 +1,5 @@
 const express = require('express');
-require('./config');
+require('./mongo-config');
 const exercise_videos = require('./exercisevideosModel');
 const port = 5000;
 
