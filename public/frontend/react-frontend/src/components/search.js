@@ -3,11 +3,14 @@ import {useState} from "react";
 import React from "react";
 import '../App.css';
 
-
 function Search() {
     const [exercise_name, setName] = useState("");
     const [exercise_url, setVideoURL] = useState("");
     const [exerciseList, setExerciseList] = useState([]);
+
+    function testButton() {
+        console.log('hi');
+    }
     
     function getExercise(e) {
         e.preventDefault(e);
@@ -33,10 +36,10 @@ function Search() {
                 if (exercise_url === '') {
                     return null;
                 } else {
-                return <iframe title="iframe"
+                return <div><iframe title="iframe"
                     width="420" height="345"
                     name={exercise_url}
-                    src={exercise_url || ''}/>
+                    src={exercise_url || ''}/><input type="text"/></div>
                 };
             } 
         setExerciseList(exerciseList.concat(<Iframe key={exerciseList.length}/>));
@@ -71,11 +74,9 @@ function Search() {
                 {exerciseList}
         </div>
 
-{/*             <div id="exercise-container">
-                <h2>Exercises</h2>
-            </div> */}
-
-
+        <button type="button" className="btn btn-primary mt-4"  onClick={testButton}>
+                        Search
+                    </button>
 
     </div>
 

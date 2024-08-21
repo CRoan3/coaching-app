@@ -6,4 +6,4 @@ const exVidSchema = new mongoose.Schema({
     exercise_tags: String
 });
 
-module.exports = mongoose.model('exercise_videos', exVidSchema)
+module.exports = mongoose.model('exercise_videos', exVidSchema);
