@@ -11,8 +11,8 @@ app.use(function(req, res, next) {
 });
 
 app.get('/fitness_app/exercise_videos/:key', async (req, res) => {
-    console.log(req.params['key']);
-    let data = await exercise_videos.find(
+/*     console.log(req.params['key']);
+ */    let data = await exercise_videos.find(
         {
             "$or": [
                 {exercise_name: {$regex: req.params['key'].toLocaleLowerCase()}},

@@ -1,53 +1,51 @@
 import axios from "axios";
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import React from "react";
 import '../App.css';
 
-function Search() {
+
+function Search({ setResults }) {
     const [exercise_name, setName] = useState("");
     const [exercise_url, setVideoURL] = useState("");
     const [exerciseList, setExerciseList] = useState([]);
+    const [input, setInput] = useState("");
 
-    function testButton() {
-        console.log('hi');
-    }
-    
-    function getExercise(e) {
-        e.preventDefault(e);
-        e.stopPropagation(e);
-        e.nativeEvent.stopImmediatePropagation();
-        axios.get("http://localhost:5000/fitness_app/exercise_videos/" + exercise_name
+    const getExercise = (value) => {
+        axios.get("http://localhost:5000/fitness_app/exercise_videos/" + value
         )
         .then((res) =>
             {
-                for (const data of res.data) {
-                    console.log(data.exercise_url)
-                    setVideoURL(data.exercise_url)
-                    localStorage.setItem('exercise_url', data.exercise_url);
-                }
-                console.log(res.data);
-                setName(exercise_name);
+                //for (const data of res.data) {
+                   /*  localStorage.setItem('exerciseURL', data.exercise_url);
+                    setName(exercise_name);
+                    setVideoURL(data.exercise_url) */
+                    //console.log(res.data);
+                    setResults(res.data)
             }
         ).catch(error => {
             alert(error)})
             
-            
-        const Iframe = () => {
-                if (exercise_url === '') {
+/*         const Iframe = () => {
+                     if (exercise_url === '') {
                     return null;
-                } else {
-                return <div><iframe title="iframe"
+                    } else { 
+                    return <div><iframe title="iframe"
                     width="420" height="345"
                     name={exercise_url}
                     src={exercise_url || ''}/><input type="text"/></div>
+                    ;
+                    }
                 };
-            } 
-        setExerciseList(exerciseList.concat(<Iframe key={exerciseList.length}/>));
-        };
+                setExerciseList(exerciseList.concat(<Iframe key={exerciseList.length}/>)); */
+    //useEffect(() => {(localStorage.getItem('exerciseURL'))}, []);      
+}  
 
+    const handleChange = (value) => {
+        setInput(value);
+        getExercise(value);
+    }
     return (
-      <div>
-
+    <div>
         <div>
             <form submit="false">
                 <div className="form-group">
@@ -58,25 +56,26 @@ function Search() {
                         className="form-input"
                         id="exercise_name"
                         name={exercise_name}
-                        value={exercise_name || ''}
-                        onChange={e => {
-                            setName(e.target.value);
-                        }}  />
+                        value={input || ''}
+                        onChange={(e) => {
+                            handleChange(e.target.value);
+                        }}
+                        autoComplete="off"  />
                 </div>
                 </div>
-                    <button type="submit" className="btn btn-primary mt-4"  onClick=
+{/*                     <button type="submit" className="btn btn-primary mt-4"  onClick=
                         {getExercise}>
                         Search
-                    </button>
+                    </button> */}
             </form>
         </div>
         <div className="exerciseContainer">
                 {exerciseList}
         </div>
 
-        <button type="button" className="btn btn-primary mt-4"  onClick={testButton}>
+{/*         <button type="button" className="btn btn-primary mt-4"  >
                         Search
-                    </button>
+                    </button> */}
 
     </div>
 
