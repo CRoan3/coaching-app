@@ -1,8 +1,12 @@
 import React from 'react';
+import {useState, useEffect} from "react";
 
-const SearchResult = ({result}) => {
+
+
+const SearchResult = ({result, generateExercise, exercise_url, exercise_name}) => {
+
     return (
-        <div>{result.exercise_name}</div>
+        <button onClick={generateExercise}>{result.exercise_name}</button>
     )
 }
 

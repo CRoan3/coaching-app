@@ -7,7 +7,7 @@ import '../App.css';
 function Search({ setResults }) {
     const [exercise_name, setName] = useState("");
     const [exercise_url, setVideoURL] = useState("");
-    const [exerciseList, setExerciseList] = useState([]);
+    //const [exerciseList, setExerciseList] = useState([]);
     const [input, setInput] = useState("");
 
     const getExercise = (value) => {
@@ -21,23 +21,11 @@ function Search({ setResults }) {
                     setVideoURL(data.exercise_url) */
                     //console.log(res.data);
                     setResults(res.data)
+                    console.log(res);
             }
         ).catch(error => {
             alert(error)})
-            
-/*         const Iframe = () => {
-                     if (exercise_url === '') {
-                    return null;
-                    } else { 
-                    return <div><iframe title="iframe"
-                    width="420" height="345"
-                    name={exercise_url}
-                    src={exercise_url || ''}/><input type="text"/></div>
-                    ;
-                    }
-                };
-                setExerciseList(exerciseList.concat(<Iframe key={exerciseList.length}/>)); */
-    //useEffect(() => {(localStorage.getItem('exerciseURL'))}, []);      
+   
 }  
 
     const handleChange = (value) => {
@@ -69,9 +57,7 @@ function Search({ setResults }) {
                     </button> */}
             </form>
         </div>
-        <div className="exerciseContainer">
-                {exerciseList}
-        </div>
+
 
 {/*         <button type="button" className="btn btn-primary mt-4"  >
                         Search

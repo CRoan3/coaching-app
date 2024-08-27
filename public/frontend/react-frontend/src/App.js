@@ -9,13 +9,15 @@ function App() {
 
 const [results, setResults] = useState([]);
 
+
   return (
     <>
       <h1>Workout</h1>
       <div id="exerciseContainter">
         <Search setResults={setResults}/>
-        <SearchResultsList results={results}/>
+        <SearchResultsList results={results} />
       </div>
+
     </>
     )
 };
